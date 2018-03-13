@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Kanupriya</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_men_fashion">MenFashion</string>
+    <string name="title_activity_women_fashion">WomenFashion</string>
+    <string name="title_activity_kids_fashion">KidsFashion</string>
+    <string name="title_activity_home_living">HomeLiving</string>
+    <string name="test"><![CDATA[
+                            <b>bold!</b> normal <b>bold!</b>
+                                ]]></string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+</resources>
