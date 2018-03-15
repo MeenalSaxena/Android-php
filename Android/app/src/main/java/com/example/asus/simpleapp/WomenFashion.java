@@ -20,7 +20,6 @@ public class WomenFashion extends AppCompatActivity {
         t1=(TextView) findViewById(R.id.textView1);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        t1.setText(Html.fromHtml(getString(R.string.test)));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -30,9 +30,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:visibility="visible"
+        android:scrollHorizontally = "true"
+        android:minLines = "2"
+        android:maxLines = "3"
+        android:lines="3"
+        android:ellipsize="end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woman1"
-        android:text="@string/test"/>
+        android:text="kjiuytrdcfvbnm,;jhgytrewsdcvbyujhloiu87ytrsauijdioasjdjasnihiehdui"/>
 
     <ImageView
         android:id="@+id/woman2"
@@ -50,9 +55,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:scrollHorizontally = "true"
+
+        android:minLines = "2"
+
+        android:maxLines = "2"
+
+
         app:layout_constraintStart_toEndOf="@+id/textView1"
         app:layout_constraintTop_toBottomOf="@+id/woman2"
-    android:text="RARE      Solid Top        Rs. 599"     />
+    android:text="RARE      Solid Top        Rs. 599"
+        android:ellipsize="end"/>
 
     <ImageView
         android:id="@+id/woman3"
@@ -77,6 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/woman3"
+        android:ellipsize="end"
         android:text="PlusS         Striped Top         Rs. 664" />
 
     <ImageView
@@ -95,6 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woman4"
         android:text="Tokyo Talkies         Printed Top         Rs. 319" />
@@ -116,6 +131,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         android:text="HERE and NOW      Woman Skinny Fit Jeans      Rs. 849"
         app:layout_constraintEnd_toStartOf="@+id/textView6"
         app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -139,6 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         android:text="Moda Rapido       Women Drop-Want Dress       Rs.899"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woman6" />
@@ -159,6 +176,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woman7"
         android:text="SASSAFRAS         Textured Top            Rs. 549" />
@@ -182,6 +200,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/woman8"
         android:text="Rain and Rainbow        Women Printed Maxi Dress            Rs. 1396" />
@@ -203,6 +222,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -225,6 +245,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         android:text="FabAlley      Solid Top       Rs. 840"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woman10" />
@@ -245,6 +266,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/woman11"
         android:text="HERE and NOW      Floral Print A-Line Dress       Rs. 499" />
@@ -268,6 +290,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/woman12"
@@ -289,6 +312,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woman13"
         android:text="Roadster      Women Skinny Fit Jeans      Rs. 749" />
@@ -309,6 +333,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/woman14"
         android:text="SASSAFRAS     Fit and Flare Dress       Rs. 899" />
@@ -332,6 +357,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/woman15"
@@ -354,6 +380,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woman16"
@@ -376,6 +403,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/woman17"
@@ -401,6 +429,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:ellipsize="end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView17"
