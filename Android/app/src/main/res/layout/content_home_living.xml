@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.asus.simpleapp.HomeLiving"
+    tools:showIn="@layout/activity_home_living">
+
+
+
+    <ImageView
+        android:id="@+id/living1"
+        android:layout_width="110dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/living1" />
+
+    <TextView
+        android:id="@+id/tvliving1"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/living1"
+        android:text="Tommy Hilfiger Printed Round Neck T-shirt       Rs.1599" />
+
+    <ImageView
+        android:id="@+id/living2"
+        android:layout_width="110dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toEndOf="@+id/living1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/living2" />
+
+    <TextView
+        android:id="@+id/tvliving2"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvliving1"
+        app:layout_constraintTop_toBottomOf="@+id/living2"
+        android:text="Tommy Hilfiger Men Solid Denim Jacket              Rs.5680" />
+
+    <ImageView
+        android:id="@+id/living3"
+        android:layout_width="110dp"
+        android:layout_height="149dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/living2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/living3" />
+
+    <TextView
+        android:id="@+id/tvliving3"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvliving2"
+        app:layout_constraintTop_toBottomOf="@+id/living3"
+        android:text="Tommy Hilfiger Men Slim Fit Casual Shirt           Rs.4599" />
+
+    <ImageView
+        android:id="@+id/living4"
+        android:layout_width="110dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvliving1"
+        app:srcCompat="@drawable/living4" />
+
+    <TextView
+        android:id="@+id/tvliving4"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/living4"
+        android:text="Tommy Hilfiger Men Regular Fit Casual Shirt               Rs. 3121" />
+
+    <ImageView
+        android:id="@+id/living5"
+        android:layout_width="112dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintStart_toEndOf="@+id/living4"
+        app:layout_constraintTop_toBottomOf="@+id/tvliving2"
+        app:srcCompat="@drawable/living5" />
+
+    <TextView
+        android:id="@+id/tvliving5"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvliving6"
+        app:layout_constraintStart_toEndOf="@+id/tvliving4"
+        app:layout_constraintTop_toBottomOf="@+id/living5"
+        android:text="Tommy Hilfiger Striped Polo Collar T-shirt          Rs. 2999" />
+
+    <ImageView
+        android:id="@+id/living6"
+        android:layout_width="109dp"
+        android:layout_height="146dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/living5"
+        app:layout_constraintTop_toBottomOf="@+id/tvliving3"
+        app:srcCompat="@drawable/living6" />
+
+    <TextView
+        android:id="@+id/tvliving6"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/living6"
+        android:text="Tommy Hilfiger Striped Polo Collar T-shirt       Rs. 2999" />
+
+    <ImageView
+        android:id="@+id/living7"
+        android:layout_width="110dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvliving4"
+        app:srcCompat="@drawable/living7" />
+
+    <TextView
+        android:id="@+id/tvliving7"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/living7"
+        android:text="Tommy Hilfiger Men Regular Fit Casual Shirt      Rs. 4599" />
+
+    <ImageView
+        android:id="@+id/living8"
+        android:layout_width="110dp"
+        android:layout_height="149dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toStartOf="@+id/living9"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toEndOf="@+id/living7"
+        app:layout_constraintTop_toBottomOf="@+id/tvliving5"
+        app:srcCompat="@drawable/living8" />
+
+    <TextView
+        android:id="@+id/tvliving8"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/tvliving7"
+        app:layout_constraintTop_toBottomOf="@+id/living8"
+        android:text="Tommy Hilfiger Men Solid Polo Collar T-shirt    Rs. 3599" />
+
+</android.support.constraint.ConstraintLayout>
