@@ -1,0 +1,24 @@
+#main{
+
+    display: block;
+    box-sizing: border-box;
+}
+#main form{
+	display: inline-block;
+    border: 1px solid black;
+    margin:8px;
+}
+
+#main input{
+    display: block;
+    box-sizing: border-box;
+    margin: 10px;
+    width: 300px;
+}
+#main textarea{
+	display: block;
+    box-sizing: border-box;
+    margin:10px;
+    width: 300px;
+    height: 150px;
+}
