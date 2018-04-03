@@ -30,7 +30,6 @@ for ($i=0; $i <count($inp) ; $i++)
 		}
 	}
 
-	// echo $sql1;
 
 	
 
