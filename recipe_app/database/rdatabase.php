@@ -18,6 +18,7 @@ for ($i=0; $i <count($inp) ; $i++) {
 	   $ctime=$inp[$i]["ctime"];
 	   
 	   // code to upload file start
+	   // localhost\renew\Android-php\recipe_app\database\sdatabase.php
 
 	   $data=$inp[$i]["img"];
 	   $data = str_replace('data:image/jpeg;base64,', '', $data);
@@ -35,7 +36,7 @@ for ($i=0; $i <count($inp) ; $i++) {
 
 
 // file upload end
-$sql1 = "INSERT INTO `recipe_table`(`recipe_id`,`u_id`, `recipe_name`, `recipe_description`, `prep_time`, `cook_time`,`image_url`) VALUES (null,'1','$rname','$rdesc','$ptime','$ctime','$file')";
+$sql1 = "INSERT INTO `recipe_table`(`recipe_id`, `recipe_name`, `recipe_description`, `prep_time`, `cook_time`,`image_url`) VALUES (null,'$rname','$rdesc','$ptime','$ctime','$file')";
 var_dump($sql1);
 //$rid="SELECT MAX(recipe_id) FROM recipe_table";
 
@@ -52,6 +53,7 @@ var_dump($query);
 			
 		}
 		echo $query;
+
 // $sql= "SELECT `u_id` FROM `user_table` ";
 //echo $sql;
 

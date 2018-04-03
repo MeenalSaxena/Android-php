@@ -19,8 +19,7 @@ $dbname = "recipe";
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
 
-$name = $_REQUEST["rname"];
-$sql = "SELECT * FROM recipe_table WHERE recipe_name='$name'";
+$sql = "SELECT * FROM recipe_table ";
 // echo $sql;
 $result = mysqli_query($con, $sql);
 if ($result != false) {
@@ -105,7 +104,7 @@ function submitAll ()
      }
      console.log(arr);
      var xmlhttp = new XMLHttpRequest();
-xmlhttp.open("POST", "http://http://localhost/recipe/Android-php/recipe_app/database/sdatabase.php", true);
+xmlhttp.open("POST", "sdatabase.php", true);
 xmlhttp.setRequestHeader("Content-type", "text/JSON");
 xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 xmlhttp.onreadystatechange = function() {

@@ -15,15 +15,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        b1=(Button)findViewById(R.id.bLogin);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                Intent in= new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(in);
-
-            }
-        });
+//        b1=(Button)findViewById(R.id.bLogin);
+//        b1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(final View v) {
+//                Intent in= new Intent(MainActivity.this, LoginActivity.class);
+//                startActivity(in);
+//
+//            }
+//        });
 
     }
 }

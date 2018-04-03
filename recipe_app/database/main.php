@@ -54,18 +54,19 @@ var loadFile = function(event) {
 		     }
 		     console.log(arr);
 		     var xmlhttp = new XMLHttpRequest();
-			 xmlhttp.open("POST", "http://localhost/recipe/Android-php/recipe_app/database/rdatabase.php", true);
+			 xmlhttp.open("POST", "rdatabase.php", true);
 			 xmlhttp.setRequestHeader("Content-type", "text/JSON");
 			 xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 			 xmlhttp.onreadystatechange = function() {
 		     if (this.readyState === 4 || this.status === 200){ 
 		       // console.log("ha");
 		        console.log(this.responseText); // echo from php
-		        //document.getElementById('mainForm').submit();
+		        document.getElementById('mainForm').submit();
 		     }       
 		};
 		xmlhttp.send(JSON.stringify({data:arr}));
-		
+		//window.location="rsteps.php";
+		//method:'post';
 		}
 </script>
 

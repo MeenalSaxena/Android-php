@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText editEmail, editPassword, editName;
     Button btnSignIn, btnRegister;
 
-    String URL= "http://10.0.2.2/renew/index.php";
+    String URL= "http://10.0.2.2/renew/Android-php/recipe_app/database/index.php";
     WebView display;
 
     JSONParser jsonParser=new JSONParser();
@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                 attemptLogin.execute(editName.getText().toString(),editPassword.getText().toString(),"");
                 Intent in=new Intent(LoginActivity.this, RecipeActivity.class);
                 startActivity(in);
+
             }
         });
 

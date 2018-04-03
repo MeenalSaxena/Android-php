@@ -24,13 +24,22 @@ for ($i=0; $i <count($inp) ; $i++)
 
 
 		$query= mysqli_query($con,$sql1);
+		if ($query) 
+		{
+			echo "Data inserted successfully";			
+		}
 	}
 
 	// echo $sql1;
 
-	if ($query) 
-		{
-			echo "Data inserted successfully";			
+	
+
+		$data="SELECT `recipe_id`, `recipe_name`, `recipe_description`, `image_url` FROM `recipe_table` ";
+		$query1= mysqli_query($con,$data);
+		while ($row=mysqli_fetch_assoc($query1)) {
+			$data2[]=$row;
 		}
+
+	echo json_encode($data2);
 ?>
 
