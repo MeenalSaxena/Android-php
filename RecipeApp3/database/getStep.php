@@ -5,12 +5,28 @@ $password = "";
 $dbname = "recipe";
 $con = mysqli_connect($servername, $username, $password, $dbname);
 
-$rid=$_REQUEST['rid'];
-$sql="SELECT `step_description` FROM `recipe_steps` WHERE `recipe_id`=$rid";
-$run=mysqli_query($con,$sql);
-while ($row=mysqli_fetch_assoc($run)) {
-	$data[]=$row;
-}
-echo json_encode($data);
+
+$data=file_get_contents("php://input");
+$data1=json_decode($data,true);
+$inp=$data1["data"];
+//$a=array_values($inp[0]);
+//$rid=$a[0];
+$rid=4;
+$sql="SELECT * FROM `recipe_steps` WHERE `recipe_id`=$rid";
+ // echo $sql;
+$result = mysqli_query($con, $sql);
+// // if ($result != false) {
+//      while($row = $result->fetch_assoc()) {
+//         $sd=$row["step_description"];
+//     }
+//         echo json_encode($sd);
+//     // }
+
 //echo $data;
+        if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       echo json_encode($row);
+    }
+}
 ?>

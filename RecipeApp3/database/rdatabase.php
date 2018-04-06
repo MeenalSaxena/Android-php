@@ -10,6 +10,7 @@ $data=file_get_contents("php://input");
 $data1=json_decode($data,true);
 $inp=$data1["data"];
 //var_dump($inp);
+$sql1;
 for ($i=0; $i <count($inp) ; $i++) { 
     	# code...
    	$rname=$inp[$i]["rname"];
@@ -25,6 +26,8 @@ for ($i=0; $i <count($inp) ; $i++) {
 	   $data = str_replace(' ', '+', $data);
 	   $data = base64_decode($data);
 	   $file = 'images/'.$rname . '.jpg';
+	   echo $file;
+	   echo $data;
 	   $success = file_put_contents($file, $data);
 	  // echo $success;	
 	//    $data = base64_decode($data); 
@@ -36,23 +39,18 @@ for ($i=0; $i <count($inp) ; $i++) {
 
 
 // file upload end
-$sql1 = "INSERT INTO `recipe_table`(`recipe_id`, `recipe_name`, `recipe_description`, `prep_time`, `cook_time`,`image_url`) VALUES (null,'$rname','$rdesc','$ptime','$ctime','$file')";
-var_dump($sql1);
+$sql1 = "INSERT INTO `recipe_table`(`recipe_id`, `recipe_name`, `recipe_description`, `prep_time`, `cook_time`,`image_url`) VALUES ('','$rname','$rdesc','$ptime','$ctime','$file')";
 //$rid="SELECT MAX(recipe_id) FROM recipe_table";
 
 //echo $rid;
 	$query= mysqli_query($con,$sql1);
 	var_dump($query);
+
+// var_dump($sql1);
+
+		
 }
 
-var_dump($query);
-
-	if ($query) 
-		{
-			echo "Data inserted successfully";
-			
-		}
-		echo $query;
 
 // $sql= "SELECT `u_id` FROM `user_table` ";
 //echo $sql;

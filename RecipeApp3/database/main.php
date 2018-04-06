@@ -4,7 +4,7 @@
 	<title>Main Page</title>
 </head>
 <body>
-	<form action="rsteps.php" method="post" id="mainForm" enctype="multipart/form-data">
+	<form  method="post" id="mainForm" enctype="multipart/form-data">
 		
   		<input name="rname" type="text" placeholder="Recipe Name"><br>
   		<textarea name="rdesc" type="textarea" placeholder="Recipe Description"></textarea><br>
@@ -61,7 +61,7 @@ var loadFile = function(event) {
 		     if (this.readyState === 4 || this.status === 200){ 
 		       // console.log("ha");
 		        console.log(this.responseText); // echo from php
-		        document.getElementById('mainForm').submit();
+		        //document.getElementById('mainForm').submit();
 		     }       
 		};
 		xmlhttp.send(JSON.stringify({data:arr}));

@@ -22,11 +22,9 @@ public class StepsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps);
-        exV=(ExpandableListView) findViewById(R.id.ex1);
         fillData();
 
-        MyExListAdapter exAd=new MyExListAdapter(this, langs, topics);
-        exV.setAdapter(exAd);
+
 
     }
     public void fillData()

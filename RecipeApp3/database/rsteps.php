@@ -25,10 +25,11 @@ $result = mysqli_query($con, $sql);
 if ($result != false) {
      while($row = $result->fetch_assoc()) {
         $rid=$row["recipe_id"];
-        // echo $rid;
     }
+        // echo json_encode($rid);
     }
   ?>
+  
     <button onclick="add()">Add Steps</button>
     
 
@@ -65,7 +66,7 @@ function add ()
 
     var rid=document.createElement("input");
     rid.type="hidden";
-    rid.value=<?php echo json_encode($rid); ?>;;
+    rid.value=<?php echo json_encode($rid); ?>;
     form.appendChild(rid);
 
 
@@ -101,21 +102,34 @@ function submitAll ()
         var sdesc=allForms[i].getElementsByTagName("textarea")[0];   
         var step= new createStep(rid.value,snum.value,sdesc.value,stime.value);
         arr.push(step);
-     }
+             }
      console.log(arr);
      var xmlhttp = new XMLHttpRequest();
 xmlhttp.open("POST", "sdatabase.php", true);
+xmlhttp.open("POST", "getStep.php", true);
 xmlhttp.setRequestHeader("Content-type", "text/JSON");
 xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 xmlhttp.onreadystatechange = function() {
     if (this.readyState === 4 || this.status === 200){ 
        // console.log("ha");
         console.log(this.responseText); // echo from php
-    }       
+    }   
+    
 };
-xmlhttp.send(JSON.stringify({data:arr}));
-// window.location="connect.php";
-//     method:'post';
+xmlhttp.send(JSON.stringify({data:arr}),"getStep.php");
+
+/*
+when you send the data from above way
+the target page must have below two line to recive data
+ 
+$data=file_get_contents("php://input");
+$data1=json_decode($data,true);
+
+
+will this do ??? try karege ek baar ?
+*/
+    //window.location="getStep.php"; never do this
+    method:'post';
 }
 </script>
 

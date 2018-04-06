@@ -10,7 +10,7 @@ $con = mysqli_connect($servername, $username, $password, $dbname);
 $data=file_get_contents("php://input");
 $data1=json_decode($data,true);
 $inp=$data1["data"];
-var_dump($inp);
+// var_dump($inp);
 $db_found = mysqli_select_db($con, $dbname);
 
 for ($i=0; $i <count($inp) ; $i++) 
@@ -33,12 +33,6 @@ for ($i=0; $i <count($inp) ; $i++)
 
 	
 
-		$data="SELECT `recipe_id`, `recipe_name`, `recipe_description`, `image_url` FROM `recipe_table` ";
-		$query1= mysqli_query($con,$data);
-		while ($row=mysqli_fetch_assoc($query1)) {
-			$data2[]=$row;
-		}
-
-	echo json_encode($data2);
+		
 ?>
 
