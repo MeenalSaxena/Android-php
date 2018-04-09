@@ -7,6 +7,13 @@
 		}
 		$arr = array('data' => $data2 );
 
+		for($i=0;$i<count($arr["data"]);$i++)
+		{
+			// use your absolute url in place of this url
+			$url="http://localhost/recipe/Android-php/RecipeApp3/database/";
+			$arr["data"][$i]["image_url"]=$url.$arr["data"][$i]["image_url"];
+		}
 	echo json_encode($arr);
+
 	//`recipe_id`, `recipe_name`, `recipe_description`,
 ?>
