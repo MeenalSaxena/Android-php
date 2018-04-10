@@ -2,11 +2,13 @@ package com.example.asus.layout;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
@@ -22,19 +24,29 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Recipe extends Activity {
 
     ArrayList<RecipeData> recipeList;
-
+    TextView tv1;
     RecipeAdapter adapter;
+    String[] id;
+    int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe);
+        tv1=(TextView)findViewById(R.id.tv1);
+
         recipeList = new ArrayList<RecipeData>();
         new JSONAsyncTask().execute("http://10.0.2.2/renew/Android-php/RecipeApp3/database/display.php");
+
+        Intent in=getIntent();
+        Bundle extras = getIntent().getExtras();
+        id= extras.getStringArray("ID");
+        tv1.setText(Arrays.toString(id));
 
         ListView listview = (ListView)findViewById(R.id.list);
         adapter = new RecipeAdapter(getApplicationContext(), R.layout.activity_image, recipeList);
@@ -98,7 +110,7 @@ public class Recipe extends Activity {
 
                         recipe.setName(object.getString("recipe_name"));
                         recipe.setDescription(object.getString("recipe_description"));
-                        //recipe.setImage(object.getString("image_url"));
+                        recipe.setImage(object.getString("image_url"));
 
                         recipeList.add(recipe);
                     }

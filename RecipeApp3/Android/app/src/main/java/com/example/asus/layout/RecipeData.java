@@ -4,17 +4,17 @@ public class RecipeData {
 
     private String name;
     private String description;
-   // private String image;
+   private String image;
 
     public RecipeData() {
         // TODO Auto-generated constructor stub
     }
 
-    public RecipeData(String recipe_name, String recipe_description) {
+    public RecipeData(String recipe_name, String recipe_description, String image_url) {
         super();
         this.name = recipe_name;
         this.description = recipe_description;
-        //this.image = image;
+        this.image = image_url;
     }
 
 
@@ -34,12 +34,14 @@ public class RecipeData {
         this.description = description;
     }
 
-//    public String getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(String image) {
-//        this.image = image;
-//    }
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+
 
 }

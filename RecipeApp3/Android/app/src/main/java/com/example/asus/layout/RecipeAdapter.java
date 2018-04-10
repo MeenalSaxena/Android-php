@@ -17,6 +17,8 @@ import android.widget.TextView;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import static com.example.asus.layout.R.drawable.icon;
+
 public class RecipeAdapter extends ArrayAdapter<RecipeData> {
     ArrayList<RecipeData> recipeList;
     LayoutInflater vi;
@@ -39,15 +41,15 @@ public class RecipeAdapter extends ArrayAdapter<RecipeData> {
         if (v == null) {
             holder = new ViewHolder();
             v = vi.inflate(Resource, null);
-//            holder.imageview = (ImageView) v.findViewById(R.id.ivImage);
+            holder.imageview = (ImageView) v.findViewById(R.id.ivImage);
             holder.tvName = (TextView) v.findViewById(R.id.textView1);
             holder.tvDescription = (TextView) v.findViewById(R.id.textView2);
             v.setTag(holder);
         } else {
             holder = (ViewHolder) v.getTag();
         }
-        //holder.imageview.setImageResource(R.drawable.ic_launcher);
-        //new DownloadImageTask(holder.imageview).execute(recipeList.get(position).getImage());
+        new DownloadImageTask(holder.imageview).execute(recipeList.get(position).getImage());
+
         holder.tvName.setText(recipeList.get(position).getName());
         holder.tvDescription.setText(recipeList.get(position).getDescription());
        return v;
@@ -55,33 +57,38 @@ public class RecipeAdapter extends ArrayAdapter<RecipeData> {
     }
 
     static class ViewHolder {
-        //public ImageView imageview;
+        public ImageView imageview;
         public TextView tvName;
         public TextView tvDescription;
         }
 
-//    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-//        ImageView bmImage;
-//
-//        public DownloadImageTask(ImageView bmImage) {
-//            this.bmImage = bmImage;
-//        }
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
 
-//        protected Bitmap doInBackground(String... urls) {
-//            String urldisplay = urls[0];
-//            Bitmap mIcon11 = null;
-//            try {
-//                InputStream in = new java.net.URL(urldisplay).openStream();
-//                mIcon11 = BitmapFactory.decodeStream(in);
-//            } catch (Exception e) {
-//                Log.e("Error", e.getMessage());
-//                e.printStackTrace();
-//            }
-//            return mIcon11;
-//        }
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
 
-//        protected void onPostExecute(Bitmap result) {
-//            bmImage.setImageBitmap(result);
-//        }
+        }
 
-    }
+        protected Bitmap doInBackground(String... urls) {
+
+            System.out.println("**************************");
+            String urldisplay = urls[0];
+
+            System.out.println(urls[0]);
+            Bitmap mIcon11=null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
+        }
+
+    }}
