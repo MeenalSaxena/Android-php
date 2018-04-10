@@ -2,7 +2,7 @@
     
     require_once 'user.php';
     
-    $username = "";
+    $username = "root";
     
     $password = "";
     
