@@ -10,7 +10,11 @@
 		for($i=0;$i<count($arr["data"]);$i++)
 		{
 			// use your absolute url in place of this url
+<<<<<<< HEAD
 			$url="http://10.0.0.2/renew/Android-php/RecipeApp3/database/";
+=======
+			$url="http://localhost/recipe/Android-php/RecipeApp3/database/";
+>>>>>>> e39b2ef0030895af725032c6431e4f52ff91b09a
 			$arr["data"][$i]["image_url"]=$url.$arr["data"][$i]["image_url"];
 		}
 	echo json_encode($arr);
