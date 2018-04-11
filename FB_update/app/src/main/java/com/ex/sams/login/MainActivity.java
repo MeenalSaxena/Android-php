@@ -1,6 +1,7 @@
 package com.ex.sams.login;
         import android.os.AsyncTask;
         import android.os.Bundle;
+        import android.os.Parcelable;
         import android.webkit.WebView;
         import android.widget.ImageView;
         import android.widget.TextView;
@@ -26,6 +27,7 @@ package com.ex.sams.login;
         import com.facebook.GraphResponse;
         import com.facebook.appevents.AppEventsLogger;
 
+        import java.io.Serializable;
         import java.util.ArrayList;
 
 
@@ -40,9 +42,12 @@ public class MainActivity extends AppCompatActivity {
     LoginButton loginButton;
     ImageView imageView;
     String  email;
+    GraphRequest graphRequest;
     WebView display;
     FacebookCallback<LoginResult> callback;
     String URL="http://10.0.2.2/data.php";
+
+    Bundle bundle = new Bundle();
     JSONParser jsonParser=new JSONParser();
 
 
@@ -127,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Method to access Facebook User Data.
-    protected void GraphLoginRequest(AccessToken accessToken){
-        GraphRequest graphRequest = GraphRequest.newMeRequest(accessToken,
+    protected Bundle GraphLoginRequest(AccessToken accessToken){
+        graphRequest = GraphRequest.newMeRequest(accessToken,
                 new GraphRequest.GraphJSONObjectCallback() {
                     @Override
                     public void onCompleted(JSONObject jsonObject, GraphResponse graphResponse) {
@@ -167,10 +172,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        Bundle bundle = new Bundle();
         bundle.putString("fields", "id,name,link,email,gender,last_name,first_name,locale,timezone,updated_time,verified");
         graphRequest.setParameters(bundle);
         graphRequest.executeAsync();
+        return bundle;
 
     }
 
@@ -194,7 +199,9 @@ public class MainActivity extends AppCompatActivity {
         AppEventsLogger.deactivateApp(MainActivity.this);
 
     }
-    private class AttemptLogin extends AsyncTask<String, String, JSONObject> {
+    private abstract class AttemptLogin extends AsyncTask<Bundle, Void, Void> {
+
+
 
         @Override
 
@@ -204,27 +211,47 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        @Override
 
         protected JSONObject doInBackground(String... args) {
 
-
-
-            String bundle = args[0];
-
+            String name= bundle.getString(args[1]);
+            String first_name= bundle.getString(args[2]);
+            String last_name= bundle.getString(args[3]);
+            String gender= bundle.getString(args[4]);
             ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("name", bundle));
-            params.add(new BasicNameValuePair("first_name", bundle));
-            params.add(new BasicNameValuePair("last_name", bundle));
-            params.add(new BasicNameValuePair("gender", bundle));
-
-
-//            JSONObject ob = new JSONObject();
-            JSONObject js = JSONParser.makeHttpRequest(URL, "POST", params);
-
+            params.add(new BasicNameValuePair("name", name));
+            params.add(new BasicNameValuePair("first_name", first_name));
+            params.add(new BasicNameValuePair("last_name", last_name));
+            params.add(new BasicNameValuePair("gender", gender));
+            JSONObject js = JSONParser.makeHttpRequest(URL, "POST",params );
+            Intent in=new Intent(MainActivity.this, JSONParser.class);
+            in.putExtra("Json", (Parcelable) js);
             return js;
-
         }
+//        protected JSONObject doInBackground(String... args) {
+//
+////            Bundle bundle = new Bundle();
+////            bundle.putString("fields", "id,name,link,email,gender,last_name,first_name,locale,timezone,updated_time,verified");
+////            graphRequest.setParameters(bundle);
+////            graphRequest.executeAsync();
+//
+//            String name= args[1];
+//            String first_name= args[2];
+//            String last_name= args[3];
+//            String gender= args[4];
+//
+//            ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+//            params.add(new BasicNameValuePair("name", name));
+//            params.add(new BasicNameValuePair("first_name", first_name));
+//            params.add(new BasicNameValuePair("last_name", last_name));
+//            params.add(new BasicNameValuePair("gender", gender));
+//
+//
+////            JSONObject ob = new JSONObject();
+//            JSONObject js = JSONParser.makeHttpRequest(URL, "POST", params);
+//            return js;
+//
+//        }
 
         protected void onPostExecute(JSONObject result) {
 

@@ -1,5 +1,7 @@
 package com.ex.sams.login;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
 import org.apache.http.HttpEntity;
@@ -30,7 +32,7 @@ public class JSONParser extends JSONObject {
     static InputStream is = null;
     static JSONObject jObj = null;
     static JSONArray jArr = null;
-    static String json = "";
+    static String js="";
     static String error = "";
 
     // constructor
@@ -45,7 +47,6 @@ public class JSONParser extends JSONObject {
 
         // Making HTTP request
         try {
-
             // check for request method
             if(method.equals("POST")){
                 // request method is POST
@@ -95,25 +96,26 @@ public class JSONParser extends JSONObject {
                 sb.append(line + "\n");
             }
             is.close();
-            json = sb.toString();
-            Log.d("API123",json);
+            js = sb.toString();
+            Log.d("API123",js);
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }
 
         // try parse the string to a JSON object
         try {
-            jObj = new JSONObject(json);
+            jObj = new JSONObject(js);
             jObj.put("error_code",error);
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
         }
         // return JSON String
+        Log.i("json", jObj.toString());
         return jObj;
 
     }
 
-    private String convertStreamToString(InputStream is) throws Exception {
+    private static String convertStreamToString(InputStream is) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
         String line = null;
