@@ -31,8 +31,9 @@ public class Recipe extends Activity {
     ArrayList<RecipeData> recipeList;
     TextView tv1;
     RecipeAdapter adapter;
-    String[] id;
-    int i;
+    String id,t;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +44,13 @@ public class Recipe extends Activity {
         recipeList = new ArrayList<RecipeData>();
         new JSONAsyncTask().execute("http://10.0.2.2/renew/Android-php/RecipeApp3/database/display.php");
 
-        Intent in=getIntent();
-        Bundle extras = getIntent().getExtras();
-        id= extras.getStringArray("ID");
-        tv1.setText(Arrays.toString(id));
+        id = getIntent().getStringExtra("ID");
+//        System.out.println("**************************");
+//        System.out.println(id);
+
+        tv1.setText(id);
+        final String s=id;
+        t=s;
 
         ListView listview = (ListView)findViewById(R.id.list);
         adapter = new RecipeAdapter(getApplicationContext(), R.layout.activity_image, recipeList);
@@ -69,6 +73,8 @@ public class Recipe extends Activity {
 
         ProgressDialog dialog;
 
+
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -84,6 +90,7 @@ public class Recipe extends Activity {
             try {
 
                 //------------------>>
+
                 HttpGet httppost = new HttpGet(urls[0]);
                 System.out.println("--------------------------");
                 System.out.println(urls[0]);
@@ -103,8 +110,11 @@ public class Recipe extends Activity {
                     JSONObject jsono = new JSONObject(data);
                     JSONArray jarray = jsono.getJSONArray("data");
 
-                    for (int i = 0; i < jarray.length(); i++) {
+                    for (int i = 1; i <= jarray.length(); i++) {
+//                        System.out.println(t);
+                    if (t.equals("i" + i)) {
                         JSONObject object = jarray.getJSONObject(i);
+//                        System.out.println(object);
 
                         RecipeData recipe = new RecipeData();
 
@@ -114,6 +124,7 @@ public class Recipe extends Activity {
 
                         recipeList.add(recipe);
                     }
+                }
                     return true;
                 }
 

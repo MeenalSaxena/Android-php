@@ -15,10 +15,12 @@ public class RecipeData {
         this.name = recipe_name;
         this.description = recipe_description;
         this.image = image_url;
+
     }
 
 
     public String getName() {
+
         return name;
     }
 
@@ -33,14 +35,18 @@ public class RecipeData {
     public void setDescription(String description) {
         this.description = description;
     }
+    public String getImage() {
+
+        return image;
+    }
 
     public void setImage(String image) {
+        System.out.println("!!@#$$%^&%$##$%^&");
+        System.out.println(image);
         this.image = image;
     }
 
-    public String getImage() {
-        return image;
-    }
+
 
 
 
