@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Recipe</string>
+    <string name="action_settings">Settings</string>
+    <string name="capture_button">Click to capture photo</string>
+    <string name="desc">Capture image holder</string>
+    <string name="FbID">954866081342667</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

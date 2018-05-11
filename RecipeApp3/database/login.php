@@ -49,7 +49,7 @@
       
    </head>
    
-   <body bgcolor = "#FFFFFF">
+  <!--  <body bgcolor = "#FFFFFF">
 	
       <div align = "center">
          <div style = "width:300px; border: solid 1px #333333; " align = "left">
@@ -71,5 +71,5 @@
 			
       </div>
 
-   </body>
+   </body> -->
 </html>
