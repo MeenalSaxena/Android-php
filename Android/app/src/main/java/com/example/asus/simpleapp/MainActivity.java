@@ -131,13 +131,13 @@ public class MainActivity extends AppCompatActivity
             startActivity(in);
 
         } else if (id == R.id.nav_living) {
-            Intent in=new Intent(this, WomenFashion.class);
+            Intent in=new Intent(this, HomeLiving.class);
             startActivity(in);
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_signin) {
-            Intent in=new Intent(this, LoginActivity.class);
+            Intent in=new Intent(this, RegisterActivity2.class);
             startActivity(in);
         }
 

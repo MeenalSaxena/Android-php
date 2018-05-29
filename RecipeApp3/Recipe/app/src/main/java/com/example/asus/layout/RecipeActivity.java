@@ -1,14 +1,18 @@
 package com.example.asus.layout;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +40,7 @@ public class RecipeActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+//        Notification();
 //        iv = new ImageView[4];
 
 
@@ -152,11 +157,38 @@ public class RecipeActivity extends AppCompatActivity  {
                         org.json.JSONObject object = jarray.getJSONObject(i);
 //                        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 //                        System.out.println(object);
+
                         CreateList createList = new CreateList();
                         createList.setImage_title(object.getString("recipe_name"));
                         createList.setImage_ID(object.getString("image_url"));
                         theimage.add(createList);
-//                        recipe = new RecipeData();
+
+                        Intent intent = new Intent(RecipeActivity.this, NotificationView.class);
+                        intent.putExtra("title", object.getString("recipe_name"));
+                        intent.putExtra("text", object.getString("recipe_description"));
+                        PendingIntent pIntent = PendingIntent.getActivity(RecipeActivity.this, 0, intent,PendingIntent.FLAG_UPDATE_CURRENT);
+
+                        NotificationCompat.Builder builder = new NotificationCompat.Builder(RecipeActivity.this)
+                // Set Icon
+                .setSmallIcon(R.drawable.logosmall)
+                // Set Ticker Message
+                .setTicker(getString(R.string.notificationticker))
+                // Set Title
+                .setContentTitle(object.getString("recipe_name"))
+                // Set Text
+                .setContentText(object.getString("recipe_description"))
+                // Add an Action Button below Notification
+                .addAction(R.mipmap.ic_launcher, "Show", pIntent)
+                // Set PendingIntent into Notification
+                .setContentIntent(pIntent)
+                // Dismiss Notification
+                .setAutoCancel(true);
+
+        // Create Notification Manager
+        NotificationManager notificationmanager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        // Build Notification with Notification Manager
+        notificationmanager.notify(0, builder.build());
+// recipe = new RecipeData();
 //                        recipe.setName(object.getString("recipe_name"));
 //                        recipe.setDescription(object.getString("recipe_description"));
 //                        recipe.setImage(object.getString("image_url"));
@@ -196,5 +228,89 @@ public class RecipeActivity extends AppCompatActivity  {
         }
     }
 
+//    public void Notification() {
+//        // Set Notification Title
+//        String strtitle = getString(R.string.notificationtitle);
+//        // Set Notification Text
+//        String strtext = getString(R.string.notificationtext);
+//
+//        // Open NotificationView Class on Notification Click
+//        Intent intent = new Intent(this, NotificationView.class);
+//        // Send data to NotificationView Class
+//        intent.putExtra("title", strtitle);
+//        intent.putExtra("text", strtext);
+//        // Open NotificationView.java Activity
+//        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent,
+//                PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//        //Create Notification using NotificationCompat.Builder
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+//                // Set Icon
+//                .setSmallIcon(R.drawable.logosmall)
+//                // Set Ticker Message
+//                .setTicker(getString(R.string.notificationticker))
+//                // Set Title
+//                .setContentTitle(getString(R.string.notificationtitle))
+//                // Set Text
+//                .setContentText(getString(R.string.notificationtext))
+//                // Add an Action Button below Notification
+//                .addAction(R.mipmap.ic_launcher, "Action Button", pIntent)
+//                // Set PendingIntent into Notification
+//                .setContentIntent(pIntent)
+//                // Dismiss Notification
+//                .setAutoCancel(true);
+//
+//        // Create Notification Manager
+//        NotificationManager notificationmanager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//        // Build Notification with Notification Manager
+//        notificationmanager.notify(0, builder.build());
+//
+//    }
+
+//    public void CustomNotification() {
+//        // Using RemoteViews to bind custom layouts into Notification
+//        RemoteViews remoteViews = new RemoteViews(getPackageName(),
+//                R.layout.customnotification);
+//
+//        // Set Notification Title
+//        String strtitle = getString(R.string.customnotificationtitle);
+//        // Set Notification Text
+//        String strtext = getString(R.string.customnotificationtext);
+//
+//        // Open NotificationView Class on Notification Click
+//        Intent intent = new Intent(this, NotificationView.class);
+//        // Send data to NotificationView Class
+//        intent.putExtra("title", strtitle);
+//        intent.putExtra("text", strtext);
+//        // Open NotificationView.java Activity
+//        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent,
+//                PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+//                // Set Icon
+//                .setSmallIcon(R.drawable.logosmall)
+//                // Set Ticker Message
+//                .setTicker(getString(R.string.customnotificationticker))
+//                // Dismiss Notification
+//                .setAutoCancel(true)
+//                // Set PendingIntent into Notification
+//                .setContentIntent(pIntent)
+//                // Set RemoteViews into Notification
+//                .setContent(remoteViews);
+//
+//        // Locate and set the Image into customnotificationtext.xml ImageViews
+//        remoteViews.setImageViewResource(R.id.imagenotileft,R.mipmap.ic_launcher);
+//        remoteViews.setImageViewResource(R.id.imagenotiright,R.drawable.androidhappy);
+//
+//        // Locate and set the Text into customnotificationtext.xml TextViews
+//        remoteViews.setTextViewText(R.id.title,getString(R.string.customnotificationtitle));
+//        remoteViews.setTextViewText(R.id.text,getString(R.string.customnotificationtext));
+//
+//        // Create Notification Manager
+//        NotificationManager notificationmanager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//        // Build Notification with Notification Manager
+//        notificationmanager.notify(0, builder.build());
+//
+//    }
 
 }
