@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "177427876099",
+    "firebase_url": "https://contacts-fa3f4.firebaseio.com",
+    "project_id": "contacts-fa3f4",
+    "storage_bucket": "contacts-fa3f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177427876099:android:6ceb80a7e2983450",
+        "android_client_info": {
+          "package_name": "com.ex.sams.displaycontact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177427876099-dh93g7r25r9tql5shebe8gn3kvl75iie.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "177427876099-dh93g7r25r9tql5shebe8gn3kvl75iie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhNu7rQnfKZg88OZExJEQ1mPSgZp9nNJQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
