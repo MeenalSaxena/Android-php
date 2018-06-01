@@ -1,0 +1,95 @@
+{
+  "project_info": {
+    "project_number": "16339726108",
+    "firebase_url": "https://recipe-203718.firebaseio.com",
+    "project_id": "recipe-203718",
+    "storage_bucket": "recipe-203718.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16339726108:android:09d248bf5c0f1aad",
+        "android_client_info": {
+          "package_name": "com.example.asus.barcodeml"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16339726108-j65clo9hru35d5fae2kp3sjinlfgaidr.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "16339726108-5go9qokpk1jhd7gh6hqi7sl8unu06cre.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "16339726108-j65clo9hru35d5fae2kp3sjinlfgaidr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJNqHB5uWyIgzoFh7lpbUoy5Z3zFxAdKw"
+        },
+        {
+          "current_key": "AIzaSyCnzGlIuqVgFazCNEvTKL5Gg5f7JVxEQbs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16339726108:android:ee6825251b250244",
+        "android_client_info": {
+          "package_name": "com.example.asus.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16339726108-j65clo9hru35d5fae2kp3sjinlfgaidr.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "16339726108-5go9qokpk1jhd7gh6hqi7sl8unu06cre.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "16339726108-j65clo9hru35d5fae2kp3sjinlfgaidr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJNqHB5uWyIgzoFh7lpbUoy5Z3zFxAdKw"
+        },
+        {
+          "current_key": "AIzaSyCnzGlIuqVgFazCNEvTKL5Gg5f7JVxEQbs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
