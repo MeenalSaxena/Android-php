@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="Value" name="getvalue">
+    <button onclick="test()">Click</button>
+    <script>
+        function test(){
+            var field_number=document.getElementById("Value").value;
+            var field='';
+        
+            for(i=1;i<=field_number;i++){
+            if(i!=field_number)
+            field+="field_number"+i+",";
+            else
+            field+="field_number"+i;
+            }
+            var String1="Insert into data ("+field+")values(value_"+field+");";
+              
+console.log(String1);            
+           
+        }
+        
+    </script>
+</body>
+</html>
